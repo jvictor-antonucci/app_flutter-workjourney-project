@@ -25,7 +25,7 @@ vars:
 scripts: 
     mobx_build: $runner build
     mobx_watch: $clean & $get & $runner watch
-    mobx_delete: $get & $runner build --delete-conflicting-outputs
+    mobx_delete: $runner build --delete-conflicting-outputs
     get: $get
 
 
@@ -34,11 +34,32 @@ environment:
   sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
+  #core
+  dartz: ^0.10.0-nullsafety.2
+  equatable: ^2.0.0
+
+  # request
   dio: ^4.0.0
+
+  # state management
   flutter_mobx: ^2.0.0
   mobx: ^2.0.1
+
+  # binding & navigation
   flutter_modular: ^3.2.0
+
+  # tests
   flutter_modular_test:
+
+  skyway:
+    path: ./packages/skyway
+  lib_loggerway:
+    git:
+      url: https://github.com/WAYDS/lib_fluttercore.git
+      path: packages/lib_loggerway
+      ref: v1.0.0
+
+
   flutter:
     sdk: flutter
 

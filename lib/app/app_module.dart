@@ -1,16 +1,14 @@
+import 'package:app_jorney/app/app_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-import 'modules/home/home_module.dart';
-
 class AppModule extends Module {
-  @override
-  List<Bind> get binds => [];
+  static String get initialRoute => '/';
 
   @override
-  List<ModularRoute> get routes => [
-        ModuleRoute(
-          Modular.initialRoute,
-          module: HomeModule(),
-        ),
+  List<Bind> get binds => [
+        Bind((i) => AppController()),
       ];
+
+  @override
+  List<ModularRoute> get routes => [];
 }
